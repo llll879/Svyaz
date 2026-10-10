@@ -62,7 +62,7 @@ main{padding:26px 0 50px}.section-title{margin:0 0 14px;font-size:22px}.grid{dis
   ВСТАВЬТЕ URL развёрнутого Google Apps Script Web App, заканчивающийся на /exec.
   Пример: https://script.google.com/macros/s/ВАШ_ID/exec
 */
-const GOOGLE_SCRIPT_URL = "ВСТАВЬТЕ_URL_СЮДА";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwsmTQTwWKCEJQonveBOR0R3H9iyXSDsgORjs4oXWiyvW-NCovvDb5hdwEMvdq1JfeYMg/exec";
 const form = document.getElementById("reviewForm");
 const statusEl = document.getElementById("formStatus");
 const listEl = document.getElementById("reviewsList");
@@ -160,7 +160,7 @@ document.getElementById("adminLogout").addEventListener("click", () => {
 });
 async function deleteReview(row, button) {
   if (!adminUnlocked || !adminSecret) { adminStatus.textContent = "Сначала войдите в панель."; return; }
-  if (!row) { adminStatus.textContent = "Для удаления нужно обновить серверный скрипт. См. инструкцию в README."; return; }
+  if (!row) { adminStatus.textContent = "Для удаления нужно обновить серверный скрипт."; return; }
   if (!confirm("Удалить этот отзыв? Он исчезнет с сайта.")) return;
   button.disabled = true; adminStatus.textContent = "Удаляем отзыв…";
   try {
@@ -172,19 +172,19 @@ async function deleteReview(row, button) {
   finally { button.disabled = false; }
 }
 function loadReviews() {
-  if (!configured) { infoEl.textContent = "Google Sheets ещё не подключён. Вставьте URL Apps Script в index.html."; return; }
+  if (!configured) { infoEl.textContent = "отзывы пока не работают."; return; }
   const callbackName = "reviewsCallback_" + Date.now();
   const script = document.createElement("script");
-  const timeout = setTimeout(() => { cleanup(); infoEl.textContent = "Не удалось загрузить отзывы. Проверьте URL и доступ к веб-приложению Google."; }, 12000);
+  const timeout = setTimeout(() => { cleanup(); infoEl.textContent = "Не удалось загрузить отзывы"; }, 12000);
   function cleanup() { clearTimeout(timeout); try { delete window[callbackName]; } catch (_) {} script.remove(); }
   window[callbackName] = data => { cleanup(); showReviews(data); };
-  script.onerror = () => { cleanup(); infoEl.textContent = "Ошибка загрузки отзывов. Проверьте URL и развёртывание Apps Script."; };
+  script.onerror = () => { cleanup(); infoEl.textContent = "Ошибка загрузки отзывов."; };
   script.src = GOOGLE_SCRIPT_URL + "?callback=" + encodeURIComponent(callbackName) + "&_=" + Date.now();
   document.body.appendChild(script);
 }
 form.addEventListener("submit", async event => {
   event.preventDefault();
-  if (!configured) { statusEl.textContent = "Сначала вставьте URL Google Apps Script в index.html."; return; }
+  if (!configured) { statusEl.textContent = "ошибка загрузки отзывов."; return; }
   const button = form.querySelector("button");
   const fd = new FormData(form);
   const payload = { name: String(fd.get("name") || "").trim(), message: String(fd.get("message") || "").trim() };
@@ -200,10 +200,10 @@ form.addEventListener("submit", async event => {
       body: JSON.stringify(payload)
     });
     form.reset();
-    statusEl.textContent = "Запрос отправлен. Проверьте появление отзыва в таблице; после обновления списка он отобразится на сайте.";
+    statusEl.textContent = "Запрос отправлен. после обновления списка он отобразится на сайте.";
     setTimeout(loadReviews, 2500);
   } catch (error) {
-    statusEl.textContent = "Не удалось отправить запрос. Проверьте интернет и URL Apps Script.";
+    statusEl.textContent = "Не удалось отправить запрос. Проверьте интернет.";
   } finally {
     button.disabled = false;
   }
