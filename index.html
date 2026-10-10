@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102a43">
+<title>Уголок потребителя — ООО «Связь»</title>
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--pale:#f2f6fa;--ink:#172b4d;--muted:#62748a;--line:#dce5ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(125deg,#102a43,#1769aa);color:#fff;padding:26px 18px 34px}.wrap{width:min(1050px,100% - 32px);margin:auto}.brand{display:flex;align-items:center;gap:14px}.logo{width:48px;height:48px;border:1px solid #ffffff70;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:21px;background:#ffffff12;cursor:pointer;color:#fff}.logo:focus-visible{outline:3px solid #fff;outline-offset:3px}.brand h1{font-size:clamp(22px,4vw,34px);margin:0;line-height:1.2}.brand p{margin:5px 0 0;color:#d9e9f7}.intro{max-width:720px;margin:24px 0 0;color:#edf6ff;font-size:17px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:10px max(16px,calc((100vw - 1050px)/2))}nav a{display:inline-block;text-decoration:none;color:var(--ink);font-weight:650;font-size:14px;padding:8px 11px;border-radius:9px}nav a:hover{background:#eaf2f9;color:var(--blue)}
+main{padding:26px 0 50px}.section-title{margin:0 0 14px;font-size:22px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:26px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 14px #16324f08}.card h3{margin:0 0 12px;font-size:18px}.card p{margin:7px 0}.empty{color:var(--muted);font-size:14px}.field{padding:10px 0;border-bottom:1px solid #edf1f5;display:flex;gap:12px;justify-content:space-between}.field:last-child{border:0}.field strong{font-weight:650}.field span{color:var(--muted);text-align:right;overflow-wrap:anywhere}.doc-list{display:grid;gap:10px}.doc{border:1px dashed #c8d6e3;border-radius:10px;padding:12px;color:var(--muted);font-size:14px}.review-form{display:grid;gap:12px}.review-form input,.review-form textarea{width:100%;border:1px solid #cbd7e2;border-radius:10px;padding:12px;font:inherit;background:#fff;color:var(--ink)}.review-form textarea{min-height:110px;resize:vertical}.btn{border:0;background:var(--blue);color:white;border-radius:10px;padding:12px 16px;font:inherit;font-weight:700;cursor:pointer}.btn:disabled{opacity:.6;cursor:wait}.reviews{display:grid;gap:12px;margin-top:18px}.review{border:1px solid var(--line);border-radius:12px;padding:14px;overflow-wrap:anywhere}.review h4{margin:0 0 4px}.review time{font-size:12px;color:var(--muted)}.status{font-size:14px;color:var(--muted)}
+.admin-modal{position:fixed;inset:0;z-index:30;background:#071a2bd9;display:grid;place-items:center;padding:16px}.admin-modal[hidden]{display:none}.admin-box{position:relative;width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:24px;box-shadow:0 20px 70px #0005}.admin-box h2{margin:0 40px 8px 0}.admin-close{position:absolute;right:14px;top:10px;border:0;background:#edf3f8;border-radius:50%;width:38px;height:38px;font-size:25px;cursor:pointer}.admin-review{border:1px solid var(--line);border-radius:12px;padding:14px}.admin-review p{overflow-wrap:anywhere}.delete-btn{border:0;border-radius:9px;padding:10px 12px;background:#a82020;color:#fff;font:inherit;font-weight:700;cursor:pointer}.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.admin-box label{font-weight:650}.notice{background:#fff8e6;border:1px solid #f1d99b;border-radius:12px;padding:14px;margin-bottom:24px;font-size:14px}footer{background:#0b2033;color:#d3e0eb;padding:22px 16px;text-align:center;font-size:13px}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.card{padding:17px}.field{display:block}.field span{display:block;text-align:left;margin-top:2px}.intro{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand"><button class="logo" id="adminOpen" type="button" aria-label="Открыть вход для сотрудника" title="Служебный вход">С</button><div><h1>Уголок потребителя</h1><p>ООО «Связь»</p></div></div><p class="intro">Информация для клиентов, сведения об организации, документах и способах обратной связи.</p></div></header>
+<nav aria-label="Навигация"><a href="#company">Реквизиты</a><a href="#salons">Салоны</a><a href="#contacts">Контакты</a><a href="#documents">Документы</a><a href="#district">Участковые</a><a href="#hotline">Защита прав</a><a href="#reviews">Отзывы</a></nav>
+<main class="wrap">
+<div class="notice"><strong>Информация для потребителей.</strong> Сведения внесены по предоставленным документам ООО «Связь». Перед публикацией рекомендуем проверить актуальность данных и телефонов.</div>
+<section id="company"><h2 class="section-title">Сведения об организации</h2><div class="grid">
+<article class="card"><h3>Реквизиты</h3><div class="field"><strong>Полное наименование</strong><span>Общество с ограниченной ответственностью «Связь»</span></div><div class="field"><strong>ИНН</strong><span>6163095659</span></div><div class="field"><strong>ОГРН</strong><span>1096163000075</span></div><div class="field"><strong>Юридический адрес</strong><span>347760, Ростовская область, Целинский район, п. Целина, ул. Калинина, 11/2</span></div><div class="field"><strong>Директор</strong><span>Дорджиева Екатерина Юрьевна</span></div><div class="field"><strong>Телефон директора</strong><span>+7 905 427-68-34</span></div></article>
+<article class="card"><h3>Общая информация</h3><div class="field"><strong>Режим работы салонов</strong><span>Ежедневно; часы зависят от адреса</span></div><div class="field"><strong>Деятельность</strong><span>Розничная торговля и услуги салонов связи</span></div><div class="field"><strong>Банковские реквизиты</strong><span>Смотрите документ «Реквизиты» ниже</span></div><p class="empty">Электронная почта и официальный сайт в предоставленных документах не указаны.</p></article>
+</div></section>
+<section id="salons"><h2 class="section-title">Салоны и адреса</h2><div class="grid"><article class="card"><h3>Салоны связи и режим работы</h3><div class="field"><strong>п. Целина, ул. Калинина, 11/2</strong><span>Теле2 / МТС · 09:00–18:00, ежедневно</span></div><div class="field"><strong>г. Зерноград, ул. Ленина, 20/29а</strong><span>МТС · 09:00–18:00, ежедневно</span></div><div class="field"><strong>ст. Егорлыкская, ул. Ворошилова, 112</strong><span>Билайн · 09:00–18:00, ежедневно</span></div><div class="field"><strong>г. Ростов-на-Дону, пр. Стачки, 20</strong><span>Билайн · 10:00–18:00, ежедневно</span></div></article><article class="card"><h3>Обратите внимание</h3><p>Режим работы указан в предоставленном документе. Перед визитом рекомендуем уточнить его по телефону.</p><p class="empty">Телефоны конкретных салонов в документах не указаны.</p></article></div></section>
+<section id="contacts"><h2 class="section-title">Контакты</h2><div class="grid"><article class="card"><h3>Связь с организацией</h3><div class="field"><strong>Директор ООО «Связь»</strong><span>Дорджиева Екатерина Юрьевна</span></div><div class="field"><strong>Телефон</strong><span>+7 905 427-68-34</span></div><div class="field"><strong>Почтовый адрес</strong><span>347760, Ростовская область, Целинский район, п. Целина, ул. Калинина, 11/2</span></div></article><article class="card"><h3>Защита прав потребителей и экстренные службы</h3><div class="field"><strong>Роспотребнадзор</strong><span>8 800 555-49-43</span></div><div class="field"><strong>Целина</strong><span>+7 86371 9-70-71</span></div><div class="field"><strong>Егорлыкская</strong><span>+7 86370 2-24-02</span></div><div class="field"><strong>Зерноград</strong><span>+7 928 959-62-06</span></div><div class="field"><strong>Ростов-на-Дону</strong><span>8 800 555-12-81</span></div><div class="field"><strong>Полиция / пожарная охрана / скорая</strong><span>112 (также 02 / 01 / 03)</span></div></article></div></section>
+<section id="documents"><h2 class="section-title">Сертификаты, лицензии и документы</h2><div class="grid"><article class="card"><h3>Сертификаты и декларации</h3><div class="doc-list"><a class="doc" href="documents/Реквизиты.pdf" target="_blank" rel="noopener">Реквизиты ООО «Связь» (PDF)</a><a class="doc" href="documents/ЕГРЮЛ.pdf" target="_blank" rel="noopener">Выписка / сведения ЕГРЮЛ (PDF)</a><a class="doc" href="documents/Адреса салонов.pdf" target="_blank" rel="noopener">Адреса салонов (PDF)</a><a class="doc" href="documents/Режим работы салонов.pdf" target="_blank" rel="noopener">Режим работы салонов (PDF)</a></div></article><article class="card"><h3>Правила и защита прав потребителей</h3><div class="doc-list"><a class="doc" href="documents/Закон Защиты прав потребителя.pdf" target="_blank" rel="noopener">Закон РФ «О защите прав потребителей» (PDF)</a><a class="doc" href="documents/Правила розничной торговли.pdf" target="_blank" rel="noopener">Правила розничной торговли (PDF)</a><a class="doc" href="documents/Данные Роспотребнадзор полиция пожарные.pdf" target="_blank" rel="noopener">Контакты надзорных и экстренных служб (PDF)</a></div></article></div></section>
+<section id="district"><h2 class="section-title">Участковые пункты полиции</h2><div class="card"><p class="empty">Адреса, телефоны и часы приёма будут добавлены для соответствующих районов обслуживания.</p></div></section>
+<section id="hotline" style="margin-top:26px"><h2 class="section-title">Защита прав потребителей</h2><div class="grid"><article class="card"><h3>Горячая линия</h3><p class="empty">Телефон и режим работы будут добавлены после проверки официальных контактов.</p></article><article class="card"><h3>Куда обратиться</h3><p class="empty">Сведения об уполномоченных органах и региональных консультационных службах будут добавлены позже.</p></article></div></section>
+<section id="reviews"><h2 class="section-title">Отзывы клиентов</h2><div class="grid">
+<article class="card"><h3>Оставить отзыв</h3><form class="review-form" id="reviewForm"><input name="name" maxlength="80" placeholder="Имя (необязательно)" autocomplete="name"><textarea name="message" minlength="3" maxlength="2000" required placeholder="Ваш отзыв"></textarea><button class="btn" type="submit">Отправить отзыв</button><div class="status" id="formStatus" role="status">Поделитесь впечатлением о посещении. Пожалуйста, не указывайте личные данные.</div></form></article>
+<article class="card"><h3>Отзывы посетителей</h3><p class="empty" id="reviewsInfo">Здесь появятся отзывы посетителей.</p><div class="reviews" id="reviewsList"></div></article>
+</div></section>
+</main>
+<div id="adminModal" class="admin-modal" hidden role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+ <div class="admin-box">
+  <button class="admin-close" id="adminClose" type="button" aria-label="Закрыть">×</button>
+  <section id="adminLogin">
+   <h2 id="adminTitle">Вход для администратора</h2>
+   <p>Этот раздел предназначен только для ответственного сотрудника.</p>
+   <form id="adminLoginForm" class="review-form">
+    <label for="adminPassword">Пароль администратора</label>
+    <input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Введите пароль">
+    <button class="btn" type="submit">Войти</button>
+    <div class="status" id="adminLoginStatus" role="status"></div>
+   </form>
+  </section>
+  <section id="adminPanel" hidden>
+   <h2>Управление отзывами</h2>
+   <p>Здесь можно удалить отзыв, который не должен отображаться на сайте.</p>
+   <button class="btn" id="adminRefresh" type="button">Обновить список</button>
+   <div id="adminReviews" class="reviews"></div>
+   <div class="status" id="adminStatus" role="status"></div>
+   <button class="btn" id="adminLogout" type="button">Выйти из панели</button>
+  </section>
+ </div>
+</div>
+<footer>ООО «Связь» · Уголок потребителя · Информация для посетителей</footer>
+<script>
+/*
+  ВСТАВЬТЕ URL развёрнутого Google Apps Script Web App, заканчивающийся на /exec.
+  Пример: https://script.google.com/macros/s/ВАШ_ID/exec
+*/
+const GOOGLE_SCRIPT_URL = "ВСТАВЬТЕ_URL_СЮДА";
+const form = document.getElementById("reviewForm");
+const statusEl = document.getElementById("formStatus");
+const listEl = document.getElementById("reviewsList");
+const infoEl = document.getElementById("reviewsInfo");
+const configured = GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/macros/s/") && GOOGLE_SCRIPT_URL.endsWith("/exec");
+const adminModal = document.getElementById("adminModal");
+const adminLoginForm = document.getElementById("adminLoginForm");
+const adminPassword = document.getElementById("adminPassword");
+const adminLoginStatus = document.getElementById("adminLoginStatus");
+const adminPanel = document.getElementById("adminPanel");
+const adminReviews = document.getElementById("adminReviews");
+const adminStatus = document.getElementById("adminStatus");
+let adminUnlocked = false;
+let adminSecret = "";
+
+function showReviews(items) {
+  listEl.replaceChildren();
+  if (!Array.isArray(items) || !items.length) {
+    infoEl.textContent = "Пока нет опубликованных отзывов.";
+    return;
+  }
+  infoEl.textContent = "";
+  items.forEach((item, index) => {
+    const card = document.createElement("article"); card.className = "review";
+    const name = document.createElement("h4"); name.textContent = item.name || "Клиент";
+    const message = document.createElement("p"); message.textContent = item.message || "";
+    const time = document.createElement("time");
+    const date = new Date(item.created_at);
+    time.textContent = Number.isNaN(date.getTime()) ? "" : date.toLocaleString("ru-RU");
+    card.append(name, message, time); listEl.append(card);
+  });
+}
+function openAdmin() {
+  adminModal.hidden = false;
+  document.getElementById("adminLogin").hidden = false;
+  adminPanel.hidden = true;
+  adminPassword.value = "";
+  adminLoginStatus.textContent = "";
+  adminPassword.focus();
+}
+function closeAdmin() { adminModal.hidden = true; }
+document.getElementById("adminOpen").addEventListener("click", openAdmin);
+document.getElementById("adminClose").addEventListener("click", closeAdmin);
+adminModal.addEventListener("click", e => { if (e.target === adminModal) closeAdmin(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !adminModal.hidden) closeAdmin(); });
+
+function loadAdminReviews() {
+  if (!configured) { adminStatus.textContent = "Раздел отзывов пока не подключён."; return; }
+  adminStatus.textContent = "Загружаем отзывы…";
+  const callbackName = "adminReviewsCallback_" + Date.now();
+  const script = document.createElement("script");
+  const timeout = setTimeout(() => { cleanup(); adminStatus.textContent = "Не удалось загрузить список. Попробуйте ещё раз."; }, 12000);
+  function cleanup() { clearTimeout(timeout); try { delete window[callbackName]; } catch (_) {} script.remove(); }
+  window[callbackName] = data => {
+    cleanup(); adminReviews.replaceChildren();
+    if (!Array.isArray(data) || !data.length) { adminStatus.textContent = "Пока нет отзывов."; return; }
+    data.forEach((item, index) => {
+      const card = document.createElement("article"); card.className = "admin-review";
+      const title = document.createElement("strong"); title.textContent = item.name || "Посетитель";
+      const message = document.createElement("p"); message.textContent = item.message || "";
+      const date = document.createElement("small"); const d = new Date(item.created_at); date.textContent = Number.isNaN(d.getTime()) ? "" : d.toLocaleString("ru-RU");
+      const del = document.createElement("button"); del.type = "button"; del.className = "delete-btn"; del.textContent = "Удалить отзыв";
+      del.addEventListener("click", () => deleteReview(item.row || item.rowNumber || item.id, del));
+      card.append(title, message, date, document.createElement("br"), del); adminReviews.append(card);
+    });
+    adminStatus.textContent = "Отзывов в списке: " + data.length;
+  };
+  script.onerror = () => { cleanup(); adminStatus.textContent = "Не удалось загрузить отзывы."; };
+  script.src = GOOGLE_SCRIPT_URL + "?callback=" + encodeURIComponent(callbackName) + "&_=" + Date.now();
+  document.body.appendChild(script);
+}
+adminLoginForm.addEventListener("submit", event => {
+  event.preventDefault();
+  if (!configured) { adminLoginStatus.textContent = "Панель пока не подключена. Обратитесь к ответственному за сайт."; return; }
+  // This check only controls the interface. The server independently checks the password for every deletion.
+  const candidate = adminPassword.value;
+  const bytes = new TextEncoder().encode(candidate);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  const hash = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
+  if (hash !== "fe77c1f31f2b93564568a282fb7b16ef2568db38ba09730c3a1a70dc69377a77") {
+    adminLoginStatus.textContent = "Пароль не подошёл. Проверьте раскладку и попробуйте ещё раз.";
+    adminPassword.select();
+    return;
+  }
+  adminSecret = candidate;
+  adminUnlocked = true;
+  document.getElementById("adminLogin").hidden = true;
+  adminPanel.hidden = false;
+  loadAdminReviews();
+});
+document.getElementById("adminRefresh").addEventListener("click", loadAdminReviews);
+document.getElementById("adminLogout").addEventListener("click", () => {
+  adminUnlocked = false; adminSecret = ""; adminPanel.hidden = true;
+  document.getElementById("adminLogin").hidden = false; adminPassword.value = "";
+});
+async function deleteReview(row, button) {
+  if (!adminUnlocked || !adminSecret) { adminStatus.textContent = "Сначала войдите в панель."; return; }
+  if (!row) { adminStatus.textContent = "Для удаления нужно обновить серверный скрипт. См. инструкцию в README."; return; }
+  if (!confirm("Удалить этот отзыв? Он исчезнет с сайта.")) return;
+  button.disabled = true; adminStatus.textContent = "Удаляем отзыв…";
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify({action:"delete", row:Number(row), password:adminSecret}) });
+    adminStatus.textContent = "Запрос на удаление отправлен. Нажмите «Обновить список» через несколько секунд.";
+    setTimeout(() => { loadAdminReviews(); loadReviews(); }, 2200);
+  } catch (_) { adminStatus.textContent = "Не удалось отправить запрос. Проверьте подключение."; }
+  finally { button.disabled = false; }
+}
+function loadReviews() {
+  if (!configured) { infoEl.textContent = "Google Sheets ещё не подключён. Вставьте URL Apps Script в index.html."; return; }
+  const callbackName = "reviewsCallback_" + Date.now();
+  const script = document.createElement("script");
+  const timeout = setTimeout(() => { cleanup(); infoEl.textContent = "Не удалось загрузить отзывы. Проверьте URL и доступ к веб-приложению Google."; }, 12000);
+  function cleanup() { clearTimeout(timeout); try { delete window[callbackName]; } catch (_) {} script.remove(); }
+  window[callbackName] = data => { cleanup(); showReviews(data); };
+  script.onerror = () => { cleanup(); infoEl.textContent = "Ошибка загрузки отзывов. Проверьте URL и развёртывание Apps Script."; };
+  script.src = GOOGLE_SCRIPT_URL + "?callback=" + encodeURIComponent(callbackName) + "&_=" + Date.now();
+  document.body.appendChild(script);
+}
+form.addEventListener("submit", async event => {
+  event.preventDefault();
+  if (!configured) { statusEl.textContent = "Сначала вставьте URL Google Apps Script в index.html."; return; }
+  const button = form.querySelector("button");
+  const fd = new FormData(form);
+  const payload = { name: String(fd.get("name") || "").trim(), message: String(fd.get("message") || "").trim() };
+  if (payload.message.length < 3 || payload.message.length > 2000) { statusEl.textContent = "Отзыв должен содержать от 3 до 2000 символов."; return; }
+  button.disabled = true;
+  statusEl.textContent = "Отправляем отзыв…";
+  try {
+    // no-cors means browser won't expose Google's response; success is not directly verifiable.
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    form.reset();
+    statusEl.textContent = "Запрос отправлен. Проверьте появление отзыва в таблице; после обновления списка он отобразится на сайте.";
+    setTimeout(loadReviews, 2500);
+  } catch (error) {
+    statusEl.textContent = "Не удалось отправить запрос. Проверьте интернет и URL Apps Script.";
+  } finally {
+    button.disabled = false;
+  }
+});
+loadReviews();
+</script>
+</body></html>
